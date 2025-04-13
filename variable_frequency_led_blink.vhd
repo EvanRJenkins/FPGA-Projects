@@ -85,13 +85,14 @@ begin
 	end if;
 end process p_1Hz;
 
---MUX Logic
+--MUX Logic, assign led_blink signal to the frequency "selected" based on the two input switches
 	
 r_select_frequency <= r_toggle_50Hz when (i_sw_1 = '0' and i_sw_0 = '0') else
 							 r_toggle_25Hz when (i_sw_1 = '0' and i_sw_0 = '1') else
 							 r_toggle_10Hz when (i_sw_1 = '1' and i_sw_0 = '0') else
 							 r_toggle_1Hz when (i_sw_1 = '1' and i_sw_0 = '1') else '0';
 
+--Connect output led to selected frequency register signal
 o_led_0 <= r_select_frequency;
 						 
 end RTL;
