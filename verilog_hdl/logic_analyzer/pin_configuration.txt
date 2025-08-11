@@ -1,0 +1,12 @@
+/*
+NOTE: Low pass filter required for each analog input pin. Filter reference is REF_GND
+NOTE: Connect unused ADCIN pins to GND
+*/
+
+// ADC Input Pins
+ADC[1..2]IN[1..16]
+ANAIN[1]              // Use this for ADC 1
+ANAIN[2]              // Use this for ADC 2
+// ADC Reference Pins
+ADC_VREF
+REF_GND
