@@ -25,11 +25,18 @@ reg [1:0] r_last_state;
 reg [1:0] r_next_state;
 reg [11:0] r_sample_latch;
 
+always @(posedge i_sample_clk)
+  begin
+    r_sample_latch <= i_sample_data;
+  end
 
+  
 always @(posedge i_clk)
   begin
+    
   end
 
 
 
 endmodule
+
