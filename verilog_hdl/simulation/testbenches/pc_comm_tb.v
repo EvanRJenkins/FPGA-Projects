@@ -5,6 +5,7 @@ reg CLOCK_50 = 0;
 reg CLOCK_1 = 0;
 reg TRIGGER = 0;
 
+
 wire w_tx_done;
 wire w_mem_sel;
 wire w_byte_sel;
@@ -24,9 +25,9 @@ wire w_tx_bit;
 wire [2:0] w_tx_state;
 wire [2:0] w_bit_index;
 
+
 // Simulation assignments
 assign w_tx_data = 8'hFF;
-
 
 
 always #10 CLOCK_50 <= !CLOCK_50;
@@ -68,7 +69,6 @@ data_ctrl #(.MEM_DEPTH(16), .COUNTER_WIDTH(4)) data_ctrl_inst
 );
 
 
-
 uart_tx #(.CLOCKS_PER_BIT(2))uart_tx_inst
 (
 	.i_clk(CLOCK_50) ,	// input  i_clk_sig
@@ -81,10 +81,5 @@ uart_tx #(.CLOCKS_PER_BIT(2))uart_tx_inst
   .o_bit_index(w_bit_index)
   );
 
-
-
-
-
-
-
+  
 endmodule
